@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: getpodip
+  namespace: default
+spec:
+  template:
+    metadata:
+      name: getpodip
+    spec:
+      containers:
+      - image: getpodip:latest
+        imagePullPolicy: Never
+        name: getpodip
+        resources: {}
+      restartPolicy: Never
